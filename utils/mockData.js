@@ -1,8 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 const resList = [
-{
+    {
     "type": "restaurant",
     "data": {
     "type": "F",
@@ -1699,79 +1696,5 @@ const resList = [
     "subtype": "basic"
     }
 ]
-   
 
-
-
-//-------Navbar------//
-
-const Navbar = () => {
-    return (
-        <div className="navbar_container"> 
-            <div className="logo">
-                <img alt="navbar logo" src = "https://png.pngtree.com/png-clipart/20230106/original/pngtree-simple-and-modern-food-logo-vector-design-png-image_8876455.png"/>
-            </div>
-
-            <div className="nav_items">
-                <ul>
-                    <li>Home</li>
-                    <li>AboutUS</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCart = (props) => {
-    const {resData} = props;
-    const {name, 
-           costForTwo,
-           avgRating,
-           cuisines,
-           cloudinaryImageId } = resData?.data;
-    return (
-        <div className="cart">
-            <div className="cart_img">
-                <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+cloudinaryImageId}/>
-            </div>
-            <div className="cart_body">
-                <h3>{name}</h3>
-                <h3>{cuisines.join(", ")}</h3>
-                <h4>₹{costForTwo/100} FOR TWO</h4>
-                <h4>{avgRating} ratings</h4>
-            </div>
-        </div>
-    )
-}
-
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search_box">
-                <h2>Search</h2>
-            </div>
-
-            <div className="cart_container">
-              {
-                resList.map(restorent => <RestaurantCart resData={restorent}/>)
-              }
-            </div>
-        </div>
-    )
-}
-
-
-
-const app = (
-    <>
-        <Navbar/>
-        <Body/>
-    </>
-    
-);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(app);
-
+export default resList;
