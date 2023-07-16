@@ -39,3 +39,7 @@
 .cart_img > img{
     width: 100%;
 }
+
+.search_box{
+    margin: 10px;
+}
